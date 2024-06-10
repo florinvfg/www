@@ -1,0 +1,110 @@
+/**
+Hoja de estilo comun para todos los proyectos
+Este archivo CSS define un conjunto de reglas de estilo comunes para
+proyectos web. Aquí está la explicación línea por línea:
+
+* { box-sizing: border-box; }:
+
+Establece el modelo de caja de todos los elementos en la página como
+border-box, lo que significa que el tamaño total de un
+ elemento incluye el contenido, el relleno y el borde, pero no el margen exterior.
+body { margin: 0; padding: 0; }:
+
+Elimina los márgenes y rellenos predeterminados del cuerpo del documento.
+.col-1 a .col-12:
+
+Define clases para columnas de anchos proporcionales, desde 8.33% para .col-1 hasta 100% para .col-12.
+Media queries:
+
+Define reglas de estilo específicas para diferentes tamaños de pantalla.
+Cuando el ancho de la pantalla es menor o igual a 768px, todos los elementos
+ con clases que comienzan con col- ocuparán
+el 100% del ancho y el contenedor flex tendrá dirección de columna.
+Cuando el ancho de la pantalla es mayor que 768px pero menor o igual a 992px,
+las clases .col-1 a .col-5 ocuparán el
+50% del ancho y las clases .col-7 a .col-11 ocuparán el 100% del ancho.
+En resumen, este CSS proporciona un diseño flexible y adaptable que ajusta el
+ tamaño de las columnas según el ancho
+ de la pantalla, lo que facilita la creación de diseños receptivos y fluidos.
+
+ */
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.col-1{
+    width: 8.33%;
+}
+.col-2{
+    width: 16.66%
+}
+.col-3{
+    width: 25%;
+}
+.col-4{
+    width: 33.33%;
+}
+.col-5{
+    width: 41.66%;
+}
+.col-6{
+    width: 50%;
+}
+.col-7{
+    width: 58.33%;
+}
+.col-8{
+    width: 66.66%;
+}
+.col-9{
+    width: 75%;
+}
+.col-10{
+    width: 83.33% ;
+}
+.col-11{
+    width: 91.66%;
+}
+.col-12{
+    width: 100%;
+}
+
+@media only screen and (width<=768px){
+    [class*="col-"]{
+        width: 100%;
+    }
+    .contenedor{
+        flex-direction: column;
+    }
+    .col-img-4{
+        max-width: 33.33%;
+    }
+}
+@media only screen and (width>768px) and (width<=992px ){
+    .col-1,.col-2,.col-3,.col-4,.col-5{
+        width: 50%;
+    }
+    .col-7,.col-8,.col-9,.col-10,.col-11{
+        width: 100%;
+    }
+
+}
+/* Estilos para el juego de palabras responsive */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
